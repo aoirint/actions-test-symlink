@@ -1,0 +1,16 @@
+
+on: push
+
+job:
+  steps:
+    - run: |
+        mkdir artifact
+        mkdir artifact/aaa
+
+        mkdir bbb
+        touch bbb/ccc.txt
+        
+        ln -s "$(pwd)/bbb" artifact/bbb_symlink
+
+        mkdir artifact/bbb_phys
+        ln "$(pwd)/bbb/ccc.txt" artifact/bbb_symlink/ccc_hardlink.txt
