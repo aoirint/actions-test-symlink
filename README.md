@@ -1,2 +1,2 @@
 # actions-test-symlink
-Can upload-artifact treat symlinks?
+Can actions/upload-artifact treat symlinks?
