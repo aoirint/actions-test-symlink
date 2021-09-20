@@ -8,14 +8,15 @@ jobs:
       - run: |
           mkdir artifact
           mkdir artifact/aaa
+          touch artifact/aaa/bbb.txt
 
-          mkdir bbb
-          touch bbb/ccc.txt
+          mkdir kkk
+          touch kkk/lll.txt
 
-          ln -s "$(pwd)/bbb" artifact/bbb_symlink
+          ln -s "$(pwd)/kkk" artifact/kkk_symlink
 
-          mkdir artifact/bbb_phys
-          ln "$(pwd)/bbb/ccc.txt" artifact/bbb_symlink/ccc_hardlink.txt
+          mkdir artifact/kkk_phys
+          ln "$(pwd)/kkk/lll.txt" artifact/kkk_phys/lll_hardlink.txt
       
       - uses: actions/upload-artifact@v2
         with:
