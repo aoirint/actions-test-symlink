@@ -5,7 +5,10 @@ jobs:
   myjob:
     runs-on: 'windows-2019'
     steps:
-      - run: |
+      - shell: bash
+        env:
+          MSYS: winsymlinks:nativestrict
+        run: |
           mkdir artifact
           mkdir artifact/aaa
           touch artifact/aaa/bbb.txt
